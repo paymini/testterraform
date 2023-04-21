@@ -1,4 +1,11 @@
 
+
+############################# 
+# FROM WORKSPACE
+#############################
+variable "access_key" {}
+variable "secret_key" {}
+
 variable "region" {
   description = "create in region"
   type = string
