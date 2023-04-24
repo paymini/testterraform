@@ -1,5 +1,5 @@
 resource "aws_instance" "app_server" {
-  ami           = "ami-08c40ec9ead489470"
+  ami           = "ami-0a72af05d27b49ccb"
   instance_type = "t2.micro"
   key_name      = "aws_key"
   subnet_id     = aws_subnet.private_subnet_1.id
