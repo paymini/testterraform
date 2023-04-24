@@ -67,14 +67,14 @@ resource "aws_eip" "nat_eip" {
   }
 }
 
-resource "aws_nat_gateway" "example_nat_gateway" {
-  allocation_id = aws_eip.nat_eip.id
-  subnet_id = aws_subnet.public_subnet_1.id
+# resource "aws_nat_gateway" "example_nat_gateway" {
+#   allocation_id = aws_eip.nat_eip.id
+#   subnet_id = aws_subnet.public_subnet_1.id
 
-  tags = {
-    Name = "example-nat-gateway"
-  }
-}
+#   tags = {
+#     Name = "example-nat-gateway"
+#   }
+# }
 
 # Create route tables for public and private subnets
 resource "aws_route_table" "public_route_table" {
