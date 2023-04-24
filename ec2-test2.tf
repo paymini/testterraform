@@ -11,3 +11,14 @@ resource "aws_instance" "app_server-dup" {
   }
 }
 
+# Create a security group for the Bastion host
+resource "aws_security_group" "app_server-dup" {
+  name_prefix = "app_server-dup-sg-"
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
