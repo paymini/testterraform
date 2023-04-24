@@ -11,7 +11,7 @@ variable "aws_key" {}
 variable "region" {
   description = "create in region"
   type = string
-  default = "us-east-1a"
+  default = "us-east-1"
 }
 
 # variable "access_key" {
