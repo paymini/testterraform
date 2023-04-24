@@ -76,19 +76,19 @@ resource "aws_eip" "nat_eip" {
 #   }
 # }
 
-# Create route tables for public and private subnets
-resource "aws_route_table" "public_route_table" {
-  vpc_id = aws_vpc.example_vpc.id
+# # Create route tables for public and private subnets
+# resource "aws_route_table" "public_route_table" {
+#   vpc_id = aws_vpc.example_vpc.id
 
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.example_igw.id
-  }
+#   route {
+#     cidr_block = "0.0.0.0/0"
+#     gateway_id = aws_internet_gateway.example_igw.id
+#   }
 
-  tags = {
-    Name = "public-route-table"
-  }
-}
+#   tags = {
+#     Name = "public-route-table"
+#   }
+# }
 
 resource "aws_route_table" "private_route_table" {
   vpc_id = aws_vpc.example_vpc.id
