@@ -1,6 +1,6 @@
 resource "aws_security_group" "main" {
   name_prefix = "example-sg"
-  vpc_id      = aws_vpc.example_vpc.id
+  subnet_id     = aws_subnet.example_subnet.id
   egress = [
     {
       cidr_blocks      = ["0.0.0.0/0", ]
