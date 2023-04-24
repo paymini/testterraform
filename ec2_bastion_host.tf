@@ -1,4 +1,4 @@
-resource "aws_instance" "app_server" {
+resource "aws_instance" "bastion_host" {
   ami           = "ami-0a72af05d27b49ccb"
   instance_type = "t2.micro"
   key_name      = "aws_key"
