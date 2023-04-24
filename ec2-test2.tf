@@ -3,7 +3,7 @@ resource "aws_instance" "app_server-dup" {
   instance_type = "t2.micro"
   key_name      = "aws_key"
 
-  vpc_security_group_ids = [aws_security_group.main.id]
+  vpc_security_group_ids = [aws_security_group.app_server-dup.id]
   user_data = "${data.template_file.userdata.rendered}"
   
   tags = {
