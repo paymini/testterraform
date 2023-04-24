@@ -44,7 +44,7 @@ resource "aws_security_group" "private-ssh" {
 
 
 resource "aws_instance" "bastion" {
-  ami           = ami-0a72af05d27b49ccb
+  ami           = "ami-0a72af05d27b49ccb"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.public_subnet_1.id
   vpc_security_group_ids = [aws_security_group.bastion-allow-ssh.id]
