@@ -1,4 +1,4 @@
-resource "aws_instance" "app_server" {
+resource "aws_instance" "bastion_host" {
   ami           = "ami-0a72af05d27b49ccb"
   instance_type = "t2.micro"
   key_name      = "aws_key"
@@ -58,11 +58,11 @@ resource "aws_security_group_rule" "internet" {
   security_group_id = aws_security_group.bastion.id
 }
 
-resource "aws_security_group_rule" "intranet" {
-  protocol          = "-1"
-  from_port         = 0
-  to_port           = 0
-  type              = "egress"
-  cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.bastion.id
-}
+# resource "aws_security_group_rule" "intranet" {
+#   protocol          = "-1"
+#   from_port         = 0
+#   to_port           = 0
+#   type              = "egress"
+#   cidr_blocks       = ["0.0.0.0/0"]
+#   security_group_id = aws_security_group.bastion.id
+# }
